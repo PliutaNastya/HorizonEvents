@@ -1,0 +1,1245 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,600,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script:regular&display=swap);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box
+}
+*::after,
+*::before {
+  display: inline-block
+}
+body,
+html {
+  height: 100%;
+  min-width: 320px
+}
+body {
+  color: #000;
+  line-height: 1;
+  font-family: Montserrat,sans-serif;
+  font-size: 1.25rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+button,
+input,
+textarea {
+  font-family: Montserrat,sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: rgba(0,0,0,0)
+}
+input,
+textarea {
+  width: 100%
+}
+label {
+  display: inline-block
+}
+button,
+option,
+select {
+  cursor: pointer
+}
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none
+}
+ul li {
+  list-style: none
+}
+img {
+  vertical-align: top
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden
+}
+@supports (overflow:clip) {
+  .wrapper {
+    overflow: clip
+  }
+}
+.wrapper>main {
+  flex: 1 1 auto
+}
+.wrapper>* {
+  min-width: 0
+}
+[class*=__container] {
+  max-width: 73.75rem;
+  margin: 0 auto;
+  padding: 0 .9375rem
+}
+[class*="--gc"] {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: .9375rem 1fr minmax(auto,71.875rem) 1fr .9375rem
+}
+[class*="--gc"]>* {
+  min-width: 0;
+  grid-column: 3/4
+}
+body::after {
+  content: "";
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .8s ease 0s;
+  pointer-events: none;
+  z-index: 149
+}
+.popup-show body::after {
+  opacity: 1
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility .8s ease 0s;
+  visibility: hidden;
+  pointer-events: none
+}
+.popup_show {
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto
+}
+.popup_show .popup__content {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1)
+}
+.popup__wrapper {
+  flex-direction: column;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.popup__content {
+  visibility: hidden;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: -webkit-transform .3s ease 0s;
+  transition: transform .3s ease 0s;
+  transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
+  background-color: #eee;
+  padding: 20px;
+  width: 100%;
+  min-height: 50vh;
+  max-width: 900px;
+  border-radius: 20px
+}
+.lock .popup__content {
+  visibility: visible
+}
+.popup__text iframe {
+  width: 100%;
+  min-height: 50vh
+}
+.ibg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.ibg--top {
+  -o-object-position: top;
+  object-position: top
+}
+.ibg--bottom {
+  -o-object-position: bottom;
+  object-position: bottom
+}
+.ibg--left {
+  -o-object-position: left;
+  object-position: left
+}
+.ibg--right {
+  -o-object-position: right;
+  object-position: right
+}
+.ibg--contain {
+  -o-object-fit: contain;
+  object-fit: contain
+}
+.forces-challenge__img img,
+.live-forever__img img,
+.outback-adventure__img img,
+.pete-palooza__image img,
+.snow-camping__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.logo {
+  aspect-ratio: 257/85
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain
+}
+.title {
+  font-weight: 700;
+  line-height: 1.7;
+  text-transform: uppercase
+}
+.title span {
+  display: block;
+  color: #ffca61;
+  font-family: "Kaushan Script";
+  line-height: 1;
+  letter-spacing: -.0375rem;
+  text-transform: capitalize
+}
+.subtitle {
+  font-weight: 600;
+  line-height: 1.25
+}
+.text p {
+  line-height: 1.4
+}
+.text p:not(:last-child) {
+  -webkit-margin-after: 30px;
+  margin-block-end: 30px
+}
+.event-info {
+  font-weight: 600;
+  line-height: 1.4;
+  -webkit-padding-start: 1.5625rem;
+  padding-inline-start: 1.5625rem;
+  -webkit-border-start: 4px solid #ffca61;
+  border-inline-start: 4px solid #ffca61
+}
+.event-info__title:not(:last-child) {
+  -webkit-margin-after: .9375rem;
+  margin-block-end: .9375rem
+}
+.past-events-title {
+  color: #6ec1e4;
+  text-align: center;
+  font-family: "Kaushan Script";
+  line-height: 1;
+  letter-spacing: -1px
+}
+.header {
+  position: absolute;
+  z-index: 50;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+.header__container {
+  text-align: center
+}
+.footer {
+  background-color: #020202
+}
+.footer__container {
+  text-align: center
+}
+.footer__logo:not(:last-child) {
+  -webkit-margin-after: 1.5rem;
+  margin-block-end: 1.5rem
+}
+.footer__copy {
+  color: #fff;
+  line-height: 1.4
+}
+.page__contact-us,
+.page__forces-challenge,
+.page__hero,
+.page__live-forever,
+.page__outback-adventure,
+.page__pete-palooza,
+.page__sailing,
+.page__snow-camping {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  -webkit-padding-after: 9.375rem;
+  padding-block-end: 9.375rem;
+  background: url(../img/hero/hero_image.webp) center center/cover fixed no-repeat
+}
+.page__forces-challenge::after,
+.page__hero::after,
+.page__live-forever::after,
+.page__outback-adventure::after,
+.page__pete-palooza::after,
+.page__sailing::after,
+.page__snow-camping::after {
+  content: "";
+  width: 150vw;
+  aspect-ratio: 2218/518;
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  border-radius: 50%;
+  background: #fff;
+  -webkit-filter: blur(9.375rem);
+  filter: blur(9.375rem)
+}
+.page__live-forever {
+  background-image: url(../img/live_forever/live_forever_bg.webp)
+}
+.page__forces-challenge {
+  background-image: url(../img/forces/forces_challenge_bg.webp)
+}
+.page__snow-camping {
+  background-image: url(../img/snow_camping/snow_camping_bg.webp)
+}
+.page__outback-adventure {
+  background-image: url(../img/outback/outback_adventure_bg.webp)
+}
+.page__sailing {
+  background-image: url(../img/sailing/sailing_bg.webp)
+}
+.page__pete-palooza {
+  background-image: url(../img/pete/pete_palooza_bg.webp)
+}
+.page__contact-us {
+  background-image: url(../img/contact_us/contact_us_bg.webp);
+  background-attachment: scroll
+}
+.hero__container {
+  position: relative;
+  z-index: 5;
+  max-width: 49.375rem;
+  margin-inline: auto
+}
+.hero__title {
+  color: #fff;
+  text-align: center;
+  font-family: "Kaushan Script";
+  line-height: 1;
+  letter-spacing: -.0375rem
+}
+.hero__text p {
+  -webkit-font-kerning: none;
+  font-kerning: none;
+  line-height: 1.4
+}
+.hero__text a {
+  color: #9e034f;
+  font-weight: 700;
+  line-height: 1.3;
+  transition: all .3s
+}
+.live-forever__container {
+  position: relative;
+  z-index: 5
+}
+.live-forever__img {
+  width: 100%;
+  aspect-ratio: 1150/552
+}
+.live-forever__content {
+  position: relative;
+  z-index: 2;
+  max-width: 52.5rem;
+  margin-inline: auto;
+  background-color: #fff;
+  box-shadow: 0 .75rem 1.0938rem 0 rgba(0,0,0,.2)
+}
+.forces-challenge__container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start
+}
+.forces-challenge__content {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 50%;
+  background-color: #fff;
+  box-shadow: 0 .75rem 1.0938rem 0 rgba(0,0,0,.2)
+}
+.forces-challenge__img {
+  max-width: 39.0625rem;
+  width: 100%;
+  aspect-ratio: 625/693
+}
+.snow-camping__container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start
+}
+.snow-camping__img {
+  max-width: 38.75rem;
+  width: 100%;
+  aspect-ratio: 620/920
+}
+.snow-camping__content {
+  flex: 1 0 50%;
+  background-color: #fff;
+  box-shadow: 0 .75rem 1.0938rem 0 rgba(0,0,0,.2)
+}
+.outback-adventure {
+  -webkit-padding-before: 3.125rem;
+  padding-block-start: 3.125rem
+}
+.outback-adventure__container {
+  position: relative;
+  z-index: 5
+}
+.outback-adventure__body {
+  display: flex;
+  align-items: flex-start
+}
+.outback-adventure__content {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 50%;
+  background-color: #fff;
+  box-shadow: 0 .75rem 1.0938rem 0 rgba(0,0,0,.2)
+}
+.outback-adventure__img {
+  max-width: 39.0625rem;
+  width: 100%;
+  aspect-ratio: 625/693
+}
+.sailing__container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start
+}
+.sailing__content {
+  flex: 1 0 50%;
+  background-color: #fff;
+  box-shadow: 0 .75rem 1.0938rem 0 rgba(0,0,0,.2)
+}
+.sailing__title-body {
+  display: flex;
+  align-items: center;
+  -webkit-column-gap: .625rem;
+  -moz-column-gap: .625rem;
+  column-gap: .625rem
+}
+.sailing__inner-video {
+  justify-self: flex-end;
+  position: relative;
+  z-index: 2;
+  max-width: 38.875rem;
+  width: 100%;
+  aspect-ratio: 622/750
+}
+.sailing__inner-video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.sailing__inner-video [poster] {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.sailing__video {
+  position: relative
+}
+.sailing__video::before {
+  content: url(../img/play_icon.svg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 3.375rem;
+  height: 3.375rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg,#9e034f .1%,#ff6b11 55.74%,#ffca61 116.5%)
+}
+.sailing__video img {
+  width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.pete-palooza__container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start
+}
+.pete-palooza__content {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 50%;
+  background-color: #fff;
+  box-shadow: 0 .75rem 1.0938rem 0 rgba(0,0,0,.2)
+}
+.pete-palooza__title-body {
+  display: flex;
+  flex-direction: column;
+  row-gap: .9375rem
+}
+.pete-palooza__image {
+  max-width: 39.1875rem;
+  width: 100%;
+  aspect-ratio: 627/1026
+}
+.pete-palooza__video {
+  position: relative;
+  width: 100%
+}
+.pete-palooza__video::before {
+  content: url(../img/play_icon.svg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 3.375rem;
+  height: 3.375rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg,#9e034f .1%,#ff6b11 55.74%,#ffca61 116.5%)
+}
+.pete-palooza__video img {
+  width: 100%;
+  aspect-ratio: 429/293;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.contact-us {
+  padding-block: 1.25rem
+}
+.contact-us__container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 39.1875rem;
+  margin-inline: auto;
+  text-align: center;
+  row-gap: .875rem
+}
+.contact-us__title {
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase
+}
+.contact-us__text p {
+  color: #fff;
+  line-height: 1.4
+}
+.contact-us__text p a {
+  font-weight: 700
+}
+.button {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  background: linear-gradient(90deg,#9e034f 25.27%,#ff6b11 47.5%,#ffca61 71.77%);
+  padding: 1.5625rem 2.5rem
+}
+@media (min-width:49.99875em)and (min-width:73.75em) {
+  .pete-palooza__title {
+    max-width: 25rem
+  }
+}
+@media (min-width:49.99875em) {
+  .pete-palooza__video {
+    max-width: 26.8125rem
+  }
+  .pete-palooza__video img {
+    border: .3125rem solid #fff
+  }
+}
+@media (min-width:61.99875em) {
+  .live-forever__content {
+    -webkit-margin-before: -20%;
+    margin-block-start: -20%
+  }
+  .snow-camping__content {
+    -webkit-margin-start: -110px;
+    margin-inline-start: -110px;
+    -webkit-margin-before: 146px;
+    margin-block-start: 146px
+  }
+  .outback-adventure__content {
+    -webkit-margin-before: -88px;
+    margin-block-start: -88px;
+    -webkit-margin-end: -110px;
+    margin-inline-end: -110px
+  }
+  .sailing__content {
+    -webkit-margin-before: -88px;
+    margin-block-start: -88px;
+    -webkit-margin-end: -110px;
+    margin-inline-end: -110px;
+    -webkit-padding-end: 7.5rem;
+    padding-inline-end: 7.5rem
+  }
+  .pete-palooza__content {
+    -webkit-margin-before: -88px;
+    margin-block-start: -88px;
+    -webkit-margin-end: -110px;
+    margin-inline-end: -110px
+  }
+  .pete-palooza__video {
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    left: 50%
+  }
+}
+@media (min-width:61.99875em)and (min-width:73.75em) {
+  .forces-challenge__content {
+    -webkit-margin-end: -6.25rem;
+    margin-inline-end: -6.25rem
+  }
+  .forces-challenge__content {
+    -webkit-margin-before: 2.625rem;
+    margin-block-start: 2.625rem
+  }
+}
+@media (min-width:62.06125em) {
+  .sailing__video {
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    left: 35%
+  }
+}
+@media (min-width:73.75em) {
+  .logo {
+    width: 15.4375rem
+  }
+  .title {
+    font-size: 1.875rem
+  }
+  .title span {
+    font-size: 3.75rem
+  }
+  .title--big {
+    font-size: 2.8125rem
+  }
+  .subtitle {
+    font-size: 1.5rem
+  }
+  .text p {
+    font-size: 1.25rem
+  }
+  .event-info {
+    font-size: 1.25rem
+  }
+  .past-events-title {
+    font-size: 6.25rem
+  }
+  .header {
+    top: 3.75rem
+  }
+  .footer {
+    -webkit-padding-before: 6.25rem;
+    padding-block-start: 6.25rem
+  }
+  .footer {
+    -webkit-padding-after: 3.75rem;
+    padding-block-end: 3.75rem
+  }
+  .footer__copy {
+    font-size: 1.25rem
+  }
+  .page__contact-us,
+  .page__forces-challenge,
+  .page__hero,
+  .page__live-forever,
+  .page__outback-adventure,
+  .page__pete-palooza,
+  .page__sailing,
+  .page__snow-camping {
+    -webkit-padding-before: 26.875rem;
+    padding-block-start: 26.875rem
+  }
+  .hero {
+    -webkit-padding-before: 14.375rem;
+    padding-block-start: 14.375rem
+  }
+  .hero__title {
+    font-size: 3.75rem
+  }
+  .hero__title:not(:last-child) {
+    -webkit-margin-after: 3.4375rem;
+    margin-block-end: 3.4375rem
+  }
+  .hero__text p:not(:last-child) {
+    -webkit-margin-after: 2.1875rem;
+    margin-block-end: 2.1875rem
+  }
+  .live-forever__content {
+    padding-block: 4.375rem
+  }
+  .live-forever__content {
+    padding-inline: 6.25rem
+  }
+  .live-forever__title:not(:last-child) {
+    -webkit-margin-after: 2.5rem;
+    margin-block-end: 2.5rem
+  }
+  .live-forever__subtitle:not(:last-child) {
+    -webkit-margin-after: 1.875rem;
+    margin-block-end: 1.875rem
+  }
+  .forces-challenge__content {
+    padding-block: 4.375rem
+  }
+  .forces-challenge__content {
+    padding-inline: 2.5rem
+  }
+  .forces-challenge__title:not(:last-child) {
+    -webkit-margin-after: 1.875rem;
+    margin-block-end: 1.875rem
+  }
+  .forces-challenge__info:not(:last-child) {
+    -webkit-margin-after: 2.375rem;
+    margin-block-end: 2.375rem
+  }
+  .snow-camping__content {
+    padding-block: 3.4375rem
+  }
+  .snow-camping__content {
+    padding-inline: 2.5rem
+  }
+  .snow-camping__title:not(:last-child) {
+    -webkit-margin-after: 2.9375rem;
+    margin-block-end: 2.9375rem
+  }
+  .snow-camping__info:not(:last-child) {
+    -webkit-margin-after: 1.625rem;
+    margin-block-end: 1.625rem
+  }
+  .outback-adventure__body {
+    -webkit-padding-before: 18.75rem;
+    padding-block-start: 18.75rem
+  }
+  .outback-adventure__content {
+    padding-block: 4.0625rem
+  }
+  .outback-adventure__content {
+    padding-inline: 2.8125rem
+  }
+  .outback-adventure__title:not(:last-child) {
+    -webkit-margin-after: 1.875rem;
+    margin-block-end: 1.875rem
+  }
+  .outback-adventure__info:not(:last-child) {
+    -webkit-margin-after: 2.375rem;
+    margin-block-end: 2.375rem
+  }
+  .sailing__content {
+    padding-block: 4.0625rem
+  }
+  .sailing__content {
+    padding-inline: 2.8125rem
+  }
+  .sailing__title-body:not(:last-child) {
+    -webkit-margin-after: 2.8125rem;
+    margin-block-end: 2.8125rem
+  }
+  .sailing__title {
+    max-width: 18.75rem
+  }
+  .sailing__video {
+    width: 14.6875rem
+  }
+  .pete-palooza__content {
+    padding-block: 4.0625rem
+  }
+  .pete-palooza__content {
+    padding-inline: 2.8125rem
+  }
+  .pete-palooza__title-body:not(:last-child) {
+    -webkit-margin-after: 2.8125rem;
+    margin-block-end: 2.8125rem
+  }
+  .contact-us__title {
+    font-size: 2.8125rem
+  }
+  .contact-us__text p {
+    font-size: 1.25rem
+  }
+  .button {
+    font-size: 1.5rem
+  }
+  .button {
+    padding-inline: 2.5rem
+  }
+  .button {
+    padding-block: 1.5625rem
+  }
+}
+@media (max-width:20em) {
+  .logo {
+    width: 9.375rem
+  }
+  .title {
+    font-size: 1.375rem
+  }
+  .title span {
+    font-size: 1.625rem
+  }
+  .title--big {
+    font-size: 1.5rem
+  }
+  .subtitle {
+    font-size: 1.125rem
+  }
+  .text p {
+    font-size: 1rem
+  }
+  .event-info {
+    font-size: 1rem
+  }
+  .past-events-title {
+    font-size: 3.375rem
+  }
+  .header {
+    top: 1.25rem
+  }
+  .footer {
+    -webkit-padding-before: 2.5rem;
+    padding-block-start: 2.5rem
+  }
+  .footer {
+    -webkit-padding-after: 2.5rem;
+    padding-block-end: 2.5rem
+  }
+  .footer__copy {
+    font-size: 1rem
+  }
+  .page__contact-us,
+  .page__forces-challenge,
+  .page__hero,
+  .page__live-forever,
+  .page__outback-adventure,
+  .page__pete-palooza,
+  .page__sailing,
+  .page__snow-camping {
+    -webkit-padding-before: 9.375rem;
+    padding-block-start: 9.375rem
+  }
+  .hero {
+    -webkit-padding-before: 9.375rem;
+    padding-block-start: 9.375rem
+  }
+  .hero__title {
+    font-size: 2rem
+  }
+  .hero__title:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .hero__text p:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .live-forever__content {
+    padding-block: 1.25rem
+  }
+  .live-forever__content {
+    padding-inline: 1.25rem
+  }
+  .live-forever__title:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .live-forever__subtitle:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .forces-challenge__content {
+    padding-block: 1.25rem
+  }
+  .forces-challenge__content {
+    padding-inline: 1.25rem
+  }
+  .forces-challenge__title:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .forces-challenge__info:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .snow-camping__content {
+    padding-block: 4.0625rem
+  }
+  .snow-camping__content {
+    padding-inline: 1.25rem
+  }
+  .snow-camping__title:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .snow-camping__info:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .outback-adventure__body {
+    -webkit-padding-before: 6.25rem;
+    padding-block-start: 6.25rem
+  }
+  .outback-adventure__content {
+    padding-block: 1.25rem
+  }
+  .outback-adventure__content {
+    padding-inline: 1.25rem
+  }
+  .outback-adventure__title:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .outback-adventure__info:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .sailing__content {
+    padding-block: 1.25rem
+  }
+  .sailing__content {
+    padding-inline: 1.25rem
+  }
+  .sailing__title-body:not(:last-child) {
+    -webkit-margin-after: 1.25rem;
+    margin-block-end: 1.25rem
+  }
+  .sailing__title {
+    max-width: 15.625rem
+  }
+  .sailing__video {
+    width: 9.375rem
+  }
+  .pete-palooza__content {
+    padding-block: 1.25rem
+  }
+  .pete-palooza__content {
+    padding-inline: 1.25rem
+  }
+  .pete-palooza__title-body:not(:last-child) {
+    -webkit-margin-after: 1.25rem;
+    margin-block-end: 1.25rem
+  }
+  .contact-us__title {
+    font-size: 2rem
+  }
+  .contact-us__text p {
+    font-size: 1.125rem
+  }
+  .button {
+    font-size: 1.125rem
+  }
+  .button {
+    padding-inline: 1.5625rem
+  }
+  .button {
+    padding-block: .9375rem
+  }
+}
+@media (max-width:61.99875em) {
+  .live-forever__img:not(:last-child) {
+    -webkit-margin-after: .9375rem;
+    margin-block-end: .9375rem
+  }
+  .forces-challenge__container {
+    flex-direction: column;
+    row-gap: 1.25rem;
+    align-items: center
+  }
+  .snow-camping__container {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.25rem
+  }
+  .outback-adventure__body {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.25rem
+  }
+  .sailing__container {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.25rem
+  }
+  .pete-palooza__container {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.25rem
+  }
+}
+@media (max-width:47.99875em) {
+  .live-forever__img {
+    aspect-ratio: 1/.7
+  }
+}
+@media (max-width:29.99875em) {
+  .button {
+    width: 100%
+  }
+}
+@media (min-width:20em)and (max-width:73.75em) {
+  .logo {
+    width: clamp(9.375rem ,7.1191860465rem + 11.2790697674vw ,15.4375rem)
+  }
+  .title {
+    font-size: clamp(1.375rem ,1.1889534884rem + .9302325581vw ,1.875rem)
+  }
+  .title span {
+    font-size: clamp(1.625rem ,.8343023256rem + 3.9534883721vw ,3.75rem)
+  }
+  .title--big {
+    font-size: clamp(1.5rem ,1.011627907rem + 2.4418604651vw ,2.8125rem)
+  }
+  .subtitle {
+    font-size: clamp(1.125rem ,.9854651163rem + .6976744186vw ,1.5rem)
+  }
+  .text p {
+    font-size: clamp(1rem ,.9069767442rem + .4651162791vw ,1.25rem)
+  }
+  .event-info {
+    font-size: clamp(1rem ,.9069767442rem + .4651162791vw ,1.25rem)
+  }
+  .past-events-title {
+    font-size: clamp(3.375rem ,2.3052325581rem + 5.3488372093vw ,6.25rem)
+  }
+  .header {
+    top: clamp(1.25rem ,.3197674419rem + 4.6511627907vw ,3.75rem)
+  }
+  .footer {
+    -webkit-padding-before: clamp(2.5rem ,1.1046511628rem + 6.976744186vw ,6.25rem);
+    padding-block-start: clamp(2.5rem ,1.1046511628rem + 6.976744186vw ,6.25rem)
+  }
+  .footer {
+    -webkit-padding-after: clamp(2.5rem ,2.0348837209rem + 2.3255813953vw ,3.75rem);
+    padding-block-end: clamp(2.5rem ,2.0348837209rem + 2.3255813953vw ,3.75rem)
+  }
+  .footer__copy {
+    font-size: clamp(1rem ,.9069767442rem + .4651162791vw ,1.25rem)
+  }
+  .page__contact-us,
+  .page__forces-challenge,
+  .page__hero,
+  .page__live-forever,
+  .page__outback-adventure,
+  .page__pete-palooza,
+  .page__sailing,
+  .page__snow-camping {
+    -webkit-padding-before: clamp(9.375rem ,2.863372093rem + 32.5581395349vw ,26.875rem);
+    padding-block-start: clamp(9.375rem ,2.863372093rem + 32.5581395349vw ,26.875rem)
+  }
+  .hero {
+    -webkit-padding-before: clamp(9.375rem ,7.5145348837rem + 9.3023255814vw ,14.375rem);
+    padding-block-start: clamp(9.375rem ,7.5145348837rem + 9.3023255814vw ,14.375rem)
+  }
+  .hero__title {
+    font-size: clamp(2rem ,1.3488372093rem + 3.2558139535vw ,3.75rem)
+  }
+  .hero__title:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.0072674419rem + 4.6511627907vw ,3.4375rem);
+    margin-block-end: clamp(.9375rem ,.0072674419rem + 4.6511627907vw ,3.4375rem)
+  }
+  .hero__text p:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.4723837209rem + 2.3255813953vw ,2.1875rem);
+    margin-block-end: clamp(.9375rem ,.4723837209rem + 2.3255813953vw ,2.1875rem)
+  }
+  .live-forever__content {
+    padding-block: clamp(1.25rem ,.0872093023rem + 5.8139534884vw ,4.375rem)
+  }
+  .live-forever__content {
+    padding-inline: clamp(1.25rem ,-.6104651163rem + 9.3023255814vw ,6.25rem)
+  }
+  .live-forever__title:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.3561046512rem + 2.9069767442vw ,2.5rem);
+    margin-block-end: clamp(.9375rem ,.3561046512rem + 2.9069767442vw ,2.5rem)
+  }
+  .live-forever__subtitle:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.5886627907rem + 1.7441860465vw ,1.875rem);
+    margin-block-end: clamp(.9375rem ,.5886627907rem + 1.7441860465vw ,1.875rem)
+  }
+  .forces-challenge__content {
+    padding-block: clamp(1.25rem ,.0872093023rem + 5.8139534884vw ,4.375rem)
+  }
+  .forces-challenge__content {
+    padding-inline: clamp(1.25rem ,.7848837209rem + 2.3255813953vw ,2.5rem)
+  }
+  .forces-challenge__title:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.5886627907rem + 1.7441860465vw ,1.875rem);
+    margin-block-end: clamp(.9375rem ,.5886627907rem + 1.7441860465vw ,1.875rem)
+  }
+  .forces-challenge__info:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.4026162791rem + 2.6744186047vw ,2.375rem);
+    margin-block-end: clamp(.9375rem ,.4026162791rem + 2.6744186047vw ,2.375rem)
+  }
+  .snow-camping__content {
+    padding-block: clamp(3.4375rem ,4.2950581395rem + -1.1627906977vw ,4.0625rem)
+  }
+  .snow-camping__content {
+    padding-inline: clamp(1.25rem ,.7848837209rem + 2.3255813953vw ,2.5rem)
+  }
+  .snow-camping__title:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.1933139535rem + 3.7209302326vw ,2.9375rem);
+    margin-block-end: clamp(.9375rem ,.1933139535rem + 3.7209302326vw ,2.9375rem)
+  }
+  .snow-camping__info:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.6816860465rem + 1.2790697674vw ,1.625rem);
+    margin-block-end: clamp(.9375rem ,.6816860465rem + 1.2790697674vw ,1.625rem)
+  }
+  .outback-adventure__body {
+    -webkit-padding-before: clamp(6.25rem ,1.5988372093rem + 23.2558139535vw ,18.75rem);
+    padding-block-start: clamp(6.25rem ,1.5988372093rem + 23.2558139535vw ,18.75rem)
+  }
+  .outback-adventure__content {
+    padding-block: clamp(1.25rem ,.2034883721rem + 5.2325581395vw ,4.0625rem)
+  }
+  .outback-adventure__content {
+    padding-inline: clamp(1.25rem ,.6686046512rem + 2.9069767442vw ,2.8125rem)
+  }
+  .outback-adventure__title:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.5886627907rem + 1.7441860465vw ,1.875rem);
+    margin-block-end: clamp(.9375rem ,.5886627907rem + 1.7441860465vw ,1.875rem)
+  }
+  .outback-adventure__info:not(:last-child) {
+    -webkit-margin-after: clamp(.9375rem ,.4026162791rem + 2.6744186047vw ,2.375rem);
+    margin-block-end: clamp(.9375rem ,.4026162791rem + 2.6744186047vw ,2.375rem)
+  }
+  .sailing__content {
+    padding-block: clamp(1.25rem ,.2034883721rem + 5.2325581395vw ,4.0625rem)
+  }
+  .sailing__content {
+    padding-inline: clamp(1.25rem ,.6686046512rem + 2.9069767442vw ,2.8125rem)
+  }
+  .sailing__title-body:not(:last-child) {
+    -webkit-margin-after: clamp(1.25rem ,.6686046512rem + 2.9069767442vw ,2.8125rem);
+    margin-block-end: clamp(1.25rem ,.6686046512rem + 2.9069767442vw ,2.8125rem)
+  }
+  .sailing__title {
+    max-width: clamp(15.625rem ,14.4622093023rem + 5.8139534884vw ,18.75rem)
+  }
+  .sailing__video {
+    width: clamp(9.375rem ,7.398255814rem + 9.8837209302vw ,14.6875rem)
+  }
+  .pete-palooza__content {
+    padding-block: clamp(1.25rem ,.2034883721rem + 5.2325581395vw ,4.0625rem)
+  }
+  .pete-palooza__content {
+    padding-inline: clamp(1.25rem ,.6686046512rem + 2.9069767442vw ,2.8125rem)
+  }
+  .pete-palooza__title-body:not(:last-child) {
+    -webkit-margin-after: clamp(1.25rem ,.6686046512rem + 2.9069767442vw ,2.8125rem);
+    margin-block-end: clamp(1.25rem ,.6686046512rem + 2.9069767442vw ,2.8125rem)
+  }
+  .contact-us__title {
+    font-size: clamp(2rem ,1.6976744186rem + 1.511627907vw ,2.8125rem)
+  }
+  .contact-us__text p {
+    font-size: clamp(1.125rem ,1.0784883721rem + .2325581395vw ,1.25rem)
+  }
+  .button {
+    font-size: clamp(1.125rem ,.9854651163rem + .6976744186vw ,1.5rem)
+  }
+  .button {
+    padding-inline: clamp(1.5625rem ,1.2136627907rem + 1.7441860465vw ,2.5rem)
+  }
+  .button {
+    padding-block: clamp(.9375rem ,.7049418605rem + 1.1627906977vw ,1.5625rem)
+  }
+}
+@media (min-width:61.99875em)and (min-width:62.06125em)and (max-width:73.75em) {
+  .forces-challenge__content {
+    -webkit-margin-end: clamp(-6.25rem ,25.2974280826rem + -42.7761736713vw ,-1.25rem);
+    margin-inline-end: clamp(-6.25rem ,25.2974280826rem + -42.7761736713vw ,-1.25rem)
+  }
+  .forces-challenge__content {
+    -webkit-margin-before: clamp(.625rem ,-9.993971233rem + 17.1104694685vw ,2.625rem);
+    margin-block-start: clamp(.625rem ,-9.993971233rem + 17.1104694685vw ,2.625rem)
+  }
+}
+@media (min-width:61.99875em)and (max-width:62.06125em) {
+  .forces-challenge__content {
+    -webkit-margin-end: -1.25rem;
+    margin-inline-end: -1.25rem
+  }
+  .forces-challenge__content {
+    -webkit-margin-before: .625rem;
+    margin-block-start: .625rem
+  }
+}
+@media (min-width:49.99875em)and (min-width:20em)and (max-width:73.75em) {
+  .pete-palooza__title {
+    max-width: clamp(15.625rem ,12.136627907rem + 17.4418604651vw ,25rem)
+  }
+}
+@media (min-width:49.99875em)and (max-width:20em) {
+  .pete-palooza__title {
+    max-width: 15.625rem
+  }
+}
+@media (min-width:49.99875em)and (max-width:61.99875em) {
+  .pete-palooza__video {
+    position: absolute;
+    z-index: 10;
+    top: -7%;
+    left: 45%
+  }
+}
+@media (any-hover:hover) {
+  .hero__text a:hover {
+    color: #6c0236;
+    text-decoration: underline
+  }
+}
